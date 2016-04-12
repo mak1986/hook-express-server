@@ -744,6 +744,12 @@
 					"isArray": false,
 					"cascadeDelete": false,
 					"order": 2
+				},
+				"payment": {
+					"type": "payment",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 3
 				}
 			},
 			"singular": "machineNameTranslation",
@@ -841,6 +847,143 @@
 				}
 			},
 			"translation": true
+		},
+		"payment": {
+			"api": {
+				"get": {
+					"all": "/payment",
+					"one": "/payment/:id"
+				},
+				"post": "/payment",
+				"patch": "/payment/:id",
+				"delete": "/payment/:id"
+			},
+			"relationships": {
+				"order": {
+					"type": "order",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"site": {
+					"type": "site",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 2
+				}
+			},
+			"singular": "payment",
+			"plural": "payments",
+			"structure": {
+				"first_name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 1
+				},
+				"last_name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 2
+				},
+				"cardholder_name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 3
+				},
+				"billing_address_line_1": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 4
+				},
+				"billing_address_line_2": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 5
+				},
+				"city": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 6
+				},
+				"country": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 7
+				},
+				"postal_code": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 8
+				},
+				"credit_card_number": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 9
+				},
+				"cvc": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 10
+				},
+				"exp_month": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 11
+				},
+				"exp_year": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 12
+				},
+				"email": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-email"
+					],
+					"translation": false,
+					"order": 13
+				},
+				"phone_area_code": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 14
+				},
+				"phone_number": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 15
+				}
+			},
+			"translation": false
 		},
 		"plan": {
 			"api": {
@@ -1136,6 +1279,12 @@
 					"isArray": true,
 					"cascadeDelete": false,
 					"order": 10
+				},
+				"payments": {
+					"type": "payment",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 11
 				}
 			},
 			"singular": "site",
@@ -1701,6 +1850,22 @@
 		"84": {
 			"route": "/accommodation-order/:mode/:id",
 			"templateUrl": "management_app/resource/accommodation__order/view/form.html"
+		},
+		"85": {
+			"route": "/payment/list",
+			"templateUrl": "management_app/resource/payment/view/list.html"
+		},
+		"86": {
+			"route": "/payment/show/:id",
+			"templateUrl": "management_app/resource/payment/view/show.html"
+		},
+		"87": {
+			"route": "/payment/:mode",
+			"templateUrl": "management_app/resource/payment/view/form.html"
+		},
+		"88": {
+			"route": "/payment/:mode/:id",
+			"templateUrl": "management_app/resource/payment/view/form.html"
 		}
 	}
 }
