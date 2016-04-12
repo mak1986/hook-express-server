@@ -1,0 +1,1706 @@
+{
+	"site": {
+		"default_language": "en"
+	},
+	"models": {
+		"accommodation": {
+			"api": {
+				"get": {
+					"all": "/accommodation",
+					"one": "/accommodation/:id"
+				},
+				"post": "/accommodation",
+				"patch": "/accommodation/:id",
+				"delete": "/accommodation/:id"
+			},
+			"relationships": {
+				"parent":{
+					"type": "accommodation",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"site": {
+					"type": "site",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 2
+				},
+				"luxuryTitle":{
+					"type": "accommodation_luxury_title",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order":3
+				},
+				"kind": {
+					"type": "accommodation_kind",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 4
+				},
+				"facilities": {
+					"type": "accommodation_facility",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 5
+				},
+				"rooms": {
+					"type": "room",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 6
+				},
+				"accommodationOrders": {
+					"type": "accommodation__order",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 7
+				}
+			},
+			"singular": "accommodation",
+			"plural": "accommodations",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 1
+				},
+				"description": {
+					"type": "textarea",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 2
+				},
+				"square_area": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 3
+				},
+				"price": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 4
+				},
+				"extra_bed_price": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 5
+				},
+				"max_extra_bed": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 6
+				},
+				"max_quantity": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 7
+				},
+				"max_children": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 8
+				},
+				"bathrooms": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 9
+				},
+				"is_parent": {
+					"type": "boolean",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 10
+				}
+			},
+			"translation": true
+		},
+		"accommodation_facility": {
+			"api": {
+				"get": {
+					"all": "/accommodation_facility",
+					"one": "/accommodation_facility/:id"
+				},
+				"post": "/accommodation_facility",
+				"patch": "/accommodation_facility/:id",
+				"delete": "/accommodation_facility/:id"
+			},
+			"relationships": {
+				"accommodations": {
+					"type": "accommodation",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				}
+			},
+			"singular": "facility",
+			"plural": "facilities",
+			"structure": {
+				"icon": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 1
+				},
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 2
+				}
+			},
+			"translation": true
+		},
+		"accommodation_kind": {
+			"api": {
+				"get": {
+					"all": "/accommodation_kind",
+					"one": "/accommodation_kind/:id"
+				},
+				"post": "/accommodation_kind",
+				"patch": "/accommodation_kind/:id",
+				"delete": "/accommodation_kind/:id"
+			},
+			"relationships": {
+				"accommodations": {
+					"type": "accommodation",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				}
+			},
+			"singular": "kind",
+			"plural": "kinds",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 1
+				}
+			},
+			"translation": true
+		},
+		"accommodation_luxury_title": {
+			"api": {
+				"get": {
+					"all": "/accommodation_luxury_title",
+					"one": "/accommodation_luxury_title/:id"
+				},
+				"post": "/accommodation_luxury_title",
+				"patch": "/accommodation_luxury_title/:id",
+				"delete": "/accommodation_luxury_title/:id"
+			},
+			"relationships": {
+				"accommodations": {
+					"type": "accommodation",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				}
+			},
+			"singular": "luxuryTitle",
+			"plural": "luxuryTitles",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 1
+				},
+				"description": {
+					"type": "textarea",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 2
+				}
+			},
+			"translation": true
+		},
+		"accommodation__order": {
+			"api": {
+				"get": {
+					"all": "/accommodation__order",
+					"one": "/accommodation__order/:id"
+				},
+				"post": "/accommodation__order",
+				"patch": "/accommodation__order/:id",
+				"delete": "/accommodation__order/:id"
+			},
+			"relationships": {
+				"accommodation": {
+					"type": "accommodation",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"order": {
+					"type": "order",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 2
+				}
+			},
+			"singular": "accommodationOrder",
+			"plural": "accommodationOrders",
+			"structure": {
+				"from": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 1
+				},
+				"to": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 2
+				},
+				"extra_bed_quantity": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 3
+				}
+			},
+			"translation": false
+		},
+		"backend_route": {
+			"api": {
+				"get": {
+					"all": "/backend_route",
+					"one": "/backend_route/:id"
+				},
+				"post": "/backend_route",
+				"patch": "/backend_route/:id",
+				"delete": "/backend_route/:id"
+			},
+			"relationships": {
+				"features": {
+					"type": "feature",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				}
+			},
+			"singular": "backendRoute",
+			"plural": "backendRoutes",
+			"structure": {
+				"machine_name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 1
+				},
+				"route": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-unique"
+					],
+					"translation": false,
+					"order": 2
+				},
+				"templateUrl": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 3
+				},
+				"model": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 4
+				},
+				"mode": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 5
+				},
+				"is_menu": {
+					"type": "boolean",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 6
+				}
+			},
+			"translation": false
+		},
+		"feature": {
+			"api": {
+				"get": {
+					"all": "/feature",
+					"one": "/feature/:id"
+				},
+				"post": "/feature",
+				"patch": "/feature/:id",
+				"delete": "/feature/:id"
+			},
+			"relationships": {
+				"backendRoutes": {
+					"type": "backend_route",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"groups": {
+					"type": "group",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 2
+				},
+				"plans": {
+					"type": "plan",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 3
+				},
+				"machineName": {
+					"type": "machine_name",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 4
+				}
+			},
+			"singular": "feature",
+			"plural": "features",
+			"structure": {
+				"icon": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 1
+				},
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 2
+				},
+				"description": {
+					"type": "textarea",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 3
+				},
+				"hide_from_menu": {
+					"type": "boolean",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 4
+				},
+				"owner": {
+					"type": "boolean",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 5
+				},
+				"weight": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 6
+				}
+			},
+			"translation": true
+		},
+		"group": {
+			"api": {
+				"get": {
+					"all": "/group",
+					"one": "/group/:id"
+				},
+				"post": "/group",
+				"patch": "/group/:id",
+				"delete": "/group/:id"
+			},
+			"relationships": {
+				"machineName": {
+					"type": "machine_name",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"users": {
+					"type": "user",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 2
+				},
+				"sites": {
+					"type": "site",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 3
+				},
+				"features": {
+					"type": "feature",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 4
+				}
+			},
+			"singular": "group",
+			"plural": "groups",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 1
+				},
+				"weight": {
+					"type": "number",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 2
+				}
+			},
+			"translation": true
+		},
+		"language": {
+			"api": {
+				"get": {
+					"all": "/language",
+					"one": "/language/:id"
+				},
+				"post": "/language",
+				"patch": "/language/:id",
+				"delete": "/language/:id"
+			},
+			"relationships": {
+				"siteDefaultLanguages": {
+					"type": "site",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"siteEnabledLanguages": {
+					"type": "site",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 2
+				},
+				"sitePublishedLanguages": {
+					"type": "site",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 3
+				},
+				"userPreferences": {
+					"type": "user_preference",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 4
+				},
+				"machineNameTranslations": {
+					"type": "machine_name_translation",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 5
+				}
+			},
+			"singular": "language",
+			"plural": "languages",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 1
+				},
+				"flag": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 2
+				},
+				"native_name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 3
+				},
+				"iso_2_code": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 4
+				}
+			},
+			"translation": true
+		},
+		"machine_name": {
+			"api": {
+				"get": {
+					"all": "/machine_name",
+					"one": "/machine_name/:id"
+				},
+				"post": "/machine_name",
+				"patch": "/machine_name/:id",
+				"delete": "/machine_name/:id"
+			},
+			"relationships": {
+				"translations": {
+					"type": "machine_name_translation",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"group": {
+					"type": "group",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 2
+				},
+				"feature": {
+					"type": "feature",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 3
+				}
+			},
+			"singular": "machineName",
+			"plural": "machineNames",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-unique"
+					],
+					"translation": false,
+					"order": 1
+				}
+			},
+			"translation": false
+		},
+		"machine_name_translation": {
+			"api": {
+				"get": {
+					"all": "/machine_name_translation",
+					"one": "/machine_name_translation/:id"
+				},
+				"post": "/machine_name_translation",
+				"patch": "/machine_name_translation/:id",
+				"delete": "/machine_name_translation/:id"
+			},
+			"relationships": {
+				"machineName": {
+					"type": "machine_name",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"language": {
+					"type": "language",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 2
+				}
+			},
+			"singular": "machineNameTranslation",
+			"plural": "machineNameTranslations",
+			"structure": {
+				"translation": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 1
+				}
+			},
+			"translation": false
+		},
+		"order": {
+			"api": {
+				"get": {
+					"all": "/order",
+					"one": "/order/:id"
+				},
+				"post": "/order",
+				"patch": "/order/:id",
+				"delete": "/order/:id"
+			},
+			"relationships": {
+				"accommodationOrders": {
+					"type": "accommodation__order",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"site": {
+					"type": "site",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 2
+				}
+			},
+			"singular": "machineNameTranslation",
+			"plural": "machineNameTranslations",
+			"structure": {
+				"paid": {
+					"type": "boolean",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 1
+				}
+			},
+			"translation": false
+		},
+		"page": {
+			"api": {
+				"get": {
+					"all": "/page",
+					"one": "/page/:id"
+				},
+				"post": "/page",
+				"patch": "/page/:id",
+				"delete": "/page/:id"
+			},
+			"relationships": {
+				"site": {
+					"type": "site",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"sections": {
+					"type": "section",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 2
+				}
+			},
+			"singular": "page",
+			"plural": "pages",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 1
+				},
+				"meta_title": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 2
+				},
+				"meta_description": {
+					"type": "textarea",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 3
+				},
+				"meta_keywords": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 4
+				},
+				"weight": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 5
+				},
+				"is_main_menu": {
+					"type": "boolean",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 6
+				},
+				"is_footer_menu": {
+					"type": "boolean",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 7
+				}
+			},
+			"translation": true
+		},
+		"plan": {
+			"api": {
+				"get": {
+					"all": "/plan",
+					"one": "/plan/:id"
+				},
+				"post": "/plan",
+				"patch": "/plan/:id",
+				"delete": "/plan/:id"
+			},
+			"relationships": {
+				"sites": {
+					"type": "site",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"features": {
+					"type": "feature",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 2
+				}
+			},
+			"singular": "plan",
+			"plural": "plans",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 1
+				},
+				"description": {
+					"type": "textarea",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 2
+				}
+			},
+			"translation": true
+		},
+		"room": {
+			"api": {
+				"get": {
+					"all": "/room",
+					"one": "/room/:id"
+				},
+				"post": "/room",
+				"patch": "/room/:id",
+				"delete": "/room/:id"
+			},
+			"relationships": {
+				"accommodations": {
+					"type": "accommodation",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				}
+			},
+			"singular": "room",
+			"plural": "rooms",
+			"structure": {
+				"room_type": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 1
+				},
+				"bed_combination": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 2
+				},
+				"max_people": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 3
+				}
+			},
+			"translation": true
+		},
+		"resort_facility": {
+			"api": {
+				"get": {
+					"all": "/resort_facility",
+					"one": "/resort_facility/:id"
+				},
+				"post": "/resort_facility",
+				"patch": "/resort_facility/:id",
+				"delete": "/resort_facility/:id"
+			},
+			"relationships": {
+				"sites": {
+					"type": "site",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				}
+			},
+			"singular": "facility",
+			"plural": "facilities",
+			"structure": {
+				"icon": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 1
+				},
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 2
+				}
+			},
+			"translation": true
+		},
+		"section": {
+			"api": {
+				"get": {
+					"all": "/section",
+					"one": "/section/:id"
+				},
+				"post": "/section",
+				"patch": "/section/:id",
+				"delete": "/section/:id"
+			},
+			"relationships": {
+				"page": {
+					"type": "page",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"kind": {
+					"type": "section_kind",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 2
+				}
+			},
+			"singular": "section",
+			"plural": "sections",
+			"structure": {
+				"title": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 1
+				},
+				"body": {
+					"type": "textarea",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 2
+				},
+				"weight": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-number"
+					],
+					"translation": false,
+					"order": 3
+				}
+			},
+			"translation": true
+		},
+		"section_kind": {
+			"api": {
+				"get": {
+					"all": "/section_kind",
+					"one": "/section_kind/:id"
+				},
+				"post": "/section_kind",
+				"patch": "/section_kind/:id",
+				"delete": "/section_kind/:id"
+			},
+			"relationships": {
+				"sections": {
+					"type": "section",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				}
+			},
+			"singular": "sectionKind",
+			"plural": "sectionKinds",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": false,
+					"order": 1
+				}
+			},
+			"translation": false
+		},
+		"site": {
+			"api": {
+				"get": {
+					"all": "/site",
+					"one": "/site/:id"
+				},
+				"post": "/site",
+				"patch": "/site/:id",
+				"delete": "/site/:id"
+			},
+			"relationships": {
+				"plan": {
+					"type": "plan",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"groups": {
+					"type": "group",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 2
+				},
+				"users": {
+					"type": "user",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 3
+				},
+				"accommodations": {
+					"type": "accommodation",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 4
+				},
+				"facilities": {
+					"type": "resort_facility",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 5
+				},
+				"defaultLanguage": {
+					"type": "language",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 6
+				},
+				"enabledLanguages": {
+					"type": "language",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 7
+				},
+				"publishedLanguages": {
+					"type": "language",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 8
+				},
+				"pages": {
+					"type": "page",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 9
+				},
+				"orders": {
+					"type": "order",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 10
+				}
+			},
+			"singular": "site",
+			"plural": "sites",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 1
+				},
+				"domain": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-unique"
+					],
+					"translation": false,
+					"order": 2
+				},
+				"subdomain": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-unique"
+					],
+					"translation": false,
+					"order": 3
+				},
+				"address": {
+					"type": "textarea",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": true,
+					"order": 4
+				},
+				"telephone": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 5
+				},
+				"fax": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 6
+				},				
+				"email": {
+					"type": "email",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-email"
+					],
+					"translation": false,
+					"order": 7
+				},
+				"facebook_link": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 8
+				},
+				"twitter_link": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 9
+				},
+				"tripadvisor_link": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 10
+				}
+			},
+			"translation": true
+		},
+		"user": {
+			"api": {
+				"get": {
+					"all": "/user",
+					"one": "/user/:id"
+				},
+				"post": "/user",
+				"patch": "/user/:id",
+				"delete": "/user/:id"
+			},
+			"relationships": {
+				"groups": {
+					"type": "group",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 1
+				},
+				"preference": {
+					"type": "user_preference",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 2
+				},
+				"sites": {
+					"type": "site",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 3
+				}
+			},
+			"singular": "user",
+			"plural": "users",
+			"structure": {
+				"username": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-min-length=\"4\"",
+						"hook-validation-max-length=\"20\"",
+						"hook-validation-no-special-characters",
+						"hook-validation-unique"
+					],
+					"translation": false,
+					"order": 1
+				},
+				"first_name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 2
+				},
+				"last_name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"translation": true,
+					"order": 3
+				},
+				"email": {
+					"type": "email",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required",
+						"hook-validation-email",
+						"hook-validation-unique"
+					],
+					"translation": false,
+					"order": 4
+				}
+			},
+			"translation": true
+		},
+		"user_preference": {
+			"api": {
+				"get": {
+					"all": "/user_preference",
+					"one": "/user_preference/:id"
+				},
+				"post": "/user_preference",
+				"patch": "/user_preference/:id",
+				"delete": "/user_preference/:id"
+			},
+			"relationships": {
+				"user": {
+					"type": "user",
+					"isArray": false,
+					"cascadeDelete": true,
+					"order": 1
+				},
+				"language": {
+					"type": "language",
+					"isArray": false,
+					"cascadeDelete": true,
+					"order": 2
+				}
+			},
+			"singular": "preference",
+			"plural": "preferences",
+			"structure": {
+				"admin_skin": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [
+						"hook-validation-required"
+					],
+					"order": 1
+				}
+			},
+			"translation": false
+		}
+	},
+	"providers": {
+		"ResourceManager": {
+			"storage": "ResourceStorage",
+			"rest": "JsonApiRest",
+			"converter": "JsonApiResourceConverter"
+		}
+	},
+	"languages": {
+		"th": {
+			"name": "Thai",
+			"nativeName": "ไทย",
+			"flag": "th",
+			"blacklist_filters": ["capitalize", "title"]
+		},
+		"en": {
+			"name": "English",
+			"nativeName": "English",
+			"flag": "gb",
+			"blacklist_filters": []
+		}
+	},
+	"url": {
+		"api": "http://localhost:3000/api"
+	},
+	"routes": {
+		"1": {
+			"route": "/group/list",
+			"templateUrl": "management_app/resource/group/view/list.html"
+		},
+		"2": {
+			"route": "/group/show/:id",
+			"templateUrl": "management_app/resource/group/view/show.html"
+		},
+		"3": {
+			"route": "/group/:mode",
+			"templateUrl": "management_app/resource/group/view/form.html"
+		},
+		"4": {
+			"route": "/group/:mode/:id",
+			"templateUrl": "management_app/resource/group/view/form.html"
+		},
+		"5": {
+			"route": "/user/list",
+			"templateUrl": "management_app/resource/user/view/list.html"
+		},
+		"6": {
+			"route": "/user/show/:id",
+			"templateUrl": "management_app/resource/user/view/show.html"
+		},
+		"7": {
+			"route": "/user/:mode",
+			"templateUrl": "management_app/resource/user/view/form.html"
+		},
+		"8": {
+			"route": "/user/:mode/:id",
+			"templateUrl": "management_app/resource/user/view/form.html"
+		},
+		"9": {
+			"route": "/user-preference/list",
+			"templateUrl": "management_app/resource/user_preference/view/list.html"
+		},
+		"10": {
+			"route": "/user-preference/show/:id",
+			"templateUrl": "management_app/resource/user_preference/view/show.html"
+		},
+		"11": {
+			"route": "/user-preference/:mode",
+			"templateUrl": "management_app/resource/user_preference/view/form.html"
+		},
+		"12": {
+			"route": "/user-preference/:mode/:id",
+			"templateUrl": "management_app/resource/user_preference/view/form.html"
+		},
+		"13": {
+			"route": "/machine-name/list",
+			"templateUrl": "management_app/resource/machine_name/view/list.html"
+		},
+		"14": {
+			"route": "/machine-name/show/:id",
+			"templateUrl": "management_app/resource/machine_name/view/show.html"
+		},
+		"15": {
+			"route": "/machine-name/:mode",
+			"templateUrl": "management_app/resource/machine_name/view/form.html"
+		},
+		"16": {
+			"route": "/machine-name/:mode/:id",
+			"templateUrl": "management_app/resource/machine_name/view/form.html"
+		},
+		"17": {
+			"route": "/machine-name-translation/list",
+			"templateUrl": "management_app/resource/machine_name_translation/view/list.html"
+		},
+		"18": {
+			"route": "/machine-name-translation/show/:id",
+			"templateUrl": "management_app/resource/machine_name_translation/view/show.html"
+		},
+		"19": {
+			"route": "/machine-name-translation/:mode",
+			"templateUrl": "management_app/resource/machine_name_translation/view/form.html"
+		},
+		"20": {
+			"route": "/machine-name-translation/:mode/:id",
+			"templateUrl": "management_app/resource/machine_name_translation/view/form.html"
+		},
+		"21": {
+			"route": "/backend-route/list",
+			"templateUrl": "management_app/resource/backend_route/view/list.html"
+		},
+		"22": {
+			"route": "/backend-route/show/:id",
+			"templateUrl": "management_app/resource/backend_route/view/show.html"
+		},
+		"23": {
+			"route": "/backend-route/:mode",
+			"templateUrl": "management_app/resource/backend_route/view/form.html"
+		},
+		"24": {
+			"route": "/backend-route/:mode/:id",
+			"templateUrl": "management_app/resource/backend_route/view/form.html"
+		},
+		"25": {
+			"route": "/site/list",
+			"templateUrl": "management_app/resource/site/view/list.html"
+		},
+		"26": {
+			"route": "/site/show/:id",
+			"templateUrl": "management_app/resource/site/view/show.html"
+		},
+		"27": {
+			"route": "/site/:mode",
+			"templateUrl": "management_app/resource/site/view/form.html"
+		},
+		"28": {
+			"route": "/site/:mode/:id",
+			"templateUrl": "management_app/resource/site/view/form.html"
+		},
+		"29": {
+			"route": "/plan/list",
+			"templateUrl": "management_app/resource/plan/view/list.html"
+		},
+		"30": {
+			"route": "/plan/show/:id",
+			"templateUrl": "management_app/resource/plan/view/show.html"
+		},
+		"31": {
+			"route": "/plan/:mode",
+			"templateUrl": "management_app/resource/plan/view/form.html"
+		},
+		"32": {
+			"route": "/plan/:mode/:id",
+			"templateUrl": "management_app/resource/plan/view/form.html"
+		},
+		"33": {
+			"route": "/feature/list",
+			"templateUrl": "management_app/resource/feature/view/list.html"
+		},
+		"34": {
+			"route": "/feature/show/:id",
+			"templateUrl": "management_app/resource/feature/view/show.html"
+		},
+		"35": {
+			"route": "/feature/:mode",
+			"templateUrl": "management_app/resource/feature/view/form.html"
+		},
+		"36": {
+			"route": "/feature/:mode/:id",
+			"templateUrl": "management_app/resource/feature/view/form.html"
+		},
+		"37": {
+			"route": "/resort-facility/list",
+			"templateUrl": "management_app/resource/resort_facility/view/list.html"
+		},
+		"38": {
+			"route": "/resort-facility/show/:id",
+			"templateUrl": "management_app/resource/resort_facility/view/show.html"
+		},
+		"39": {
+			"route": "/resort-facility/:mode",
+			"templateUrl": "management_app/resource/resort_facility/view/form.html"
+		},
+		"40": {
+			"route": "/resort-facility/:mode/:id",
+			"templateUrl": "management_app/resource/resort_facility/view/form.html"
+		},
+		"41": {
+			"route": "/accommodation-facility/list",
+			"templateUrl": "management_app/resource/accommodation_facility/view/list.html"
+		},
+		"42": {
+			"route": "/accommodation-facility/show/:id",
+			"templateUrl": "management_app/resource/accommodation_facility/view/show.html"
+		},
+		"43": {
+			"route": "/accommodation-facility/:mode",
+			"templateUrl": "management_app/resource/accommodation_facility/view/form.html"
+		},
+		"44": {
+			"route": "/accommodation-facility/:mode/:id",
+			"templateUrl": "management_app/resource/accommodation_facility/view/form.html"
+		},
+		"45": {
+			"route": "/accommodation-kind/list",
+			"templateUrl": "management_app/resource/accommodation_kind/view/list.html"
+		},
+		"46": {
+			"route": "/accommodation-kind/show/:id",
+			"templateUrl": "management_app/resource/accommodation_kind/view/show.html"
+		},
+		"47": {
+			"route": "/accommodation-kind/:mode",
+			"templateUrl": "management_app/resource/accommodation_kind/view/form.html"
+		},
+		"48": {
+			"route": "/accommodation-kind/:mode/:id",
+			"templateUrl": "management_app/resource/accommodation_kind/view/form.html"
+		},
+		"49": {
+			"route": "/accommodation/list",
+			"templateUrl": "management_app/resource/accommodation/view/list.html"
+		},
+		"50": {
+			"route": "/accommodation/show/:id",
+			"templateUrl": "management_app/resource/accommodation/view/show.html"
+		},
+		"51": {
+			"route": "/accommodation/:mode",
+			"templateUrl": "management_app/resource/accommodation/view/form.html"
+		},
+		"52": {
+			"route": "/accommodation/:mode/:id",
+			"templateUrl": "management_app/resource/accommodation/view/form.html"
+		},
+		"53": {
+			"route": "/language/list",
+			"templateUrl": "management_app/resource/language/view/list.html"
+		},
+		"54": {
+			"route": "/language/show/:id",
+			"templateUrl": "management_app/resource/language/view/show.html"
+		},
+		"55": {
+			"route": "/language/:mode",
+			"templateUrl": "management_app/resource/language/view/form.html"
+		},
+		"56": {
+			"route": "/language/:mode/:id",
+			"templateUrl": "management_app/resource/language/view/form.html"
+		},
+		"57": {
+			"route": "/room/list",
+			"templateUrl": "management_app/resource/room/view/list.html"
+		},
+		"58": {
+			"route": "/room/show/:id",
+			"templateUrl": "management_app/resource/room/view/show.html"
+		},
+		"59": {
+			"route": "/room/:mode",
+			"templateUrl": "management_app/resource/room/view/form.html"
+		},
+		"60": {
+			"route": "/room/:mode/:id",
+			"templateUrl": "management_app/resource/room/view/form.html"
+		},
+		"61": {
+			"route": "/page/list",
+			"templateUrl": "management_app/resource/page/view/list.html"
+		},
+		"62": {
+			"route": "/page/show/:id",
+			"templateUrl": "management_app/resource/page/view/show.html"
+		},
+		"63": {
+			"route": "/page/:mode",
+			"templateUrl": "management_app/resource/page/view/form.html"
+		},
+		"64": {
+			"route": "/page/:mode/:id",
+			"templateUrl": "management_app/resource/page/view/form.html"
+		},
+		"65": {
+			"route": "/section/list",
+			"templateUrl": "management_app/resource/section/view/list.html"
+		},
+		"66": {
+			"route": "/section/show/:id",
+			"templateUrl": "management_app/resource/section/view/show.html"
+		},
+		"67": {
+			"route": "/section/:mode",
+			"templateUrl": "management_app/resource/section/view/form.html"
+		},
+		"68": {
+			"route": "/section/:mode/:id",
+			"templateUrl": "management_app/resource/section/view/form.html"
+		},
+		"69": {
+			"route": "/section-kind/list",
+			"templateUrl": "management_app/resource/section_kind/view/list.html"
+		},
+		"70": {
+			"route": "/section-kind/show/:id",
+			"templateUrl": "management_app/resource/section_kind/view/show.html"
+		},
+		"71": {
+			"route": "/section-kind/:mode",
+			"templateUrl": "management_app/resource/section_kind/view/form.html"
+		},
+		"72": {
+			"route": "/section-kind/:mode/:id",
+			"templateUrl": "management_app/resource/section_kind/view/form.html"
+		},
+		"73": {
+			"route": "/accommodation-luxury-title/list",
+			"templateUrl": "management_app/resource/accommodation_luxury_title/view/list.html"
+		},
+		"74": {
+			"route": "/accommodation-luxury-title/show/:id",
+			"templateUrl": "management_app/resource/accommodation_luxury_title/view/show.html"
+		},
+		"75": {
+			"route": "/accommodation-luxury-title/:mode",
+			"templateUrl": "management_app/resource/accommodation_luxury_title/view/form.html"
+		},
+		"76": {
+			"route": "/accommodation-luxury-title/:mode/:id",
+			"templateUrl": "management_app/resource/accommodation_luxury_title/view/form.html"
+		},
+		"77": {
+			"route": "/order/list",
+			"templateUrl": "management_app/resource/order/view/list.html"
+		},
+		"78": {
+			"route": "/order/show/:id",
+			"templateUrl": "management_app/resource/order/view/show.html"
+		},
+		"79": {
+			"route": "/order/:mode",
+			"templateUrl": "management_app/resource/order/view/form.html"
+		},
+		"80": {
+			"route": "/order/:mode/:id",
+			"templateUrl": "management_app/resource/order/view/form.html"
+		},
+		"81": {
+			"route": "/accommodation-order/list",
+			"templateUrl": "management_app/resource/accommodation__order/view/list.html"
+		},
+		"82": {
+			"route": "/accommodation-order/show/:id",
+			"templateUrl": "management_app/resource/accommodation__order/view/show.html"
+		},
+		"83": {
+			"route": "/accommodation-order/:mode",
+			"templateUrl": "management_app/resource/accommodation__order/view/form.html"
+		},
+		"84": {
+			"route": "/accommodation-order/:mode/:id",
+			"templateUrl": "management_app/resource/accommodation__order/view/form.html"
+		}
+	}
+}
