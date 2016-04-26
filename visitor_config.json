@@ -56,6 +56,12 @@
 					"isArray": true,
 					"cascadeDelete": false,
 					"order": 7
+				},
+				"images":{
+					"type": "image",
+					"isArray": true,
+					"cascadeDelete": false,
+					"order": 8
 				}
 			},
 			"singular": "accommodation",
@@ -553,6 +559,44 @@
 				}
 			},
 			"translation": true
+		},
+		"image": {
+			"api": {
+				"get": {
+					"all": "/image",
+					"one": "/image/:id"
+				},
+				"post": "/image",
+				"patch": "/image/:id",
+				"delete": "/image/:id"
+			},
+			"relationships": {
+				"accommodation": {
+					"type": "accommodation",
+					"isArray": false,
+					"cascadeDelete": false,
+					"order": 1
+				}
+			},
+			"singular": "image",
+			"plural": "images",
+			"structure": {
+				"name": {
+					"type": "text",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 1
+				},
+				"primary": {
+					"type": "boolean",
+					"mode": ["list", "show", "create", "edit"],
+					"validation": [],
+					"translation": false,
+					"order": 2
+				}
+			},
+			"translation": false
 		},
 		"language": {
 			"api": {

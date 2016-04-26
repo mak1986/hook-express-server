@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const util = require('util');
 const http = require('http');
-//var fs = require('fs');
 
 // Endpoints server
 const epServer = {
@@ -59,7 +58,7 @@ var requireAuthentication = function(req, res, next) {
 		res.send();
 		return;
 	}
-	console.log(`http://${angularServer.host}:${angularServer.port}`);
+	//console.log(`http://${angularServer.host}:${angularServer.port}`);
 	// fs.writeFile("dump.txt", util.inspect(req), function(err) {
 	// 	if (err) {
 	// 		return console.log(err);
@@ -113,7 +112,7 @@ var requestToEndpoint = function(req, res) {
 
 		epRes.on('end', function() {
 			res.statusCode = epRes.statusCode;
-			console.log(util.inspect(epRes.headers));
+			//console.log(util.inspect(epRes.headers));
 			if(epRes.headers['content-type']){
 				res.setHeader('Content-Type', epRes.headers['content-type']);
 			}
@@ -142,10 +141,44 @@ var fs = require('fs');
 var config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
 var visitorConfig = JSON.parse(fs.readFileSync('visitor_config.json', 'utf8'));
 
+
 app.get('/config',function(req,res){
 	res.send(config);
 });
 app.get('/visitor-config',function(req,res){
 	res.send(visitorConfig);
 });
+
+app.get('/images/[0-9]+/accommodation_[0-9]+.jpg', function(req, res){
+	var img = fs.readFileSync('.'+req.originalUrl);
+	res.writeHead(200, {'Content-Type': 'image/gif'});
+	res.end(img, 'binary');
+});
+
+
+var walk    = require('walk');
+
+
+// Walker options
+app.get('/count-images', function(req, res){
+	console.log(req.query);
+	var id = req.query['id'];
+	var files   = 0;
+	var walker  = walk.walk('./images/'+id, { followLinks: false });
+	walker.on('file', function(root, stat, next) {
+	    // Add this file to the list of files
+	    files++;
+	    next();
+	});
+	walker.on('end', function() {
+		console.log(files);
+    	res.writeHead(200, {'Content-Type': 'text/plain'});
+    	res.end(files+'');
+	});
+});
+
+
+
+
+
 app.listen(3000);
