@@ -1561,355 +1561,355 @@
 	"routes": {
 		"1": {
 			"route": "/group/list",
-			"templateUrl": "management_app/resource/group/view/list.html"
+			"templateUrl": "app/resource/group/view/list.html"
 		},
 		"2": {
 			"route": "/group/show/:id",
-			"templateUrl": "management_app/resource/group/view/show.html"
+			"templateUrl": "app/resource/group/view/show.html"
 		},
 		"3": {
 			"route": "/group/:mode",
-			"templateUrl": "management_app/resource/group/view/form.html"
+			"templateUrl": "app/resource/group/view/form.html"
 		},
 		"4": {
 			"route": "/group/:mode/:id",
-			"templateUrl": "management_app/resource/group/view/form.html"
+			"templateUrl": "app/resource/group/view/form.html"
 		},
 		"5": {
 			"route": "/user/list",
-			"templateUrl": "management_app/resource/user/view/list.html"
+			"templateUrl": "app/resource/user/view/list.html"
 		},
 		"6": {
 			"route": "/user/show/:id",
-			"templateUrl": "management_app/resource/user/view/show.html"
+			"templateUrl": "app/resource/user/view/show.html"
 		},
 		"7": {
 			"route": "/user/:mode",
-			"templateUrl": "management_app/resource/user/view/form.html"
+			"templateUrl": "app/resource/user/view/form.html"
 		},
 		"8": {
 			"route": "/user/:mode/:id",
-			"templateUrl": "management_app/resource/user/view/form.html"
+			"templateUrl": "app/resource/user/view/form.html"
 		},
 		"9": {
 			"route": "/user-preference/list",
-			"templateUrl": "management_app/resource/user_preference/view/list.html"
+			"templateUrl": "app/resource/user_preference/view/list.html"
 		},
 		"10": {
 			"route": "/user-preference/show/:id",
-			"templateUrl": "management_app/resource/user_preference/view/show.html"
+			"templateUrl": "app/resource/user_preference/view/show.html"
 		},
 		"11": {
 			"route": "/user-preference/:mode",
-			"templateUrl": "management_app/resource/user_preference/view/form.html"
+			"templateUrl": "app/resource/user_preference/view/form.html"
 		},
 		"12": {
 			"route": "/user-preference/:mode/:id",
-			"templateUrl": "management_app/resource/user_preference/view/form.html"
+			"templateUrl": "app/resource/user_preference/view/form.html"
 		},
 		"13": {
 			"route": "/machine-name/list",
-			"templateUrl": "management_app/resource/machine_name/view/list.html"
+			"templateUrl": "app/resource/machine_name/view/list.html"
 		},
 		"14": {
 			"route": "/machine-name/show/:id",
-			"templateUrl": "management_app/resource/machine_name/view/show.html"
+			"templateUrl": "app/resource/machine_name/view/show.html"
 		},
 		"15": {
 			"route": "/machine-name/:mode",
-			"templateUrl": "management_app/resource/machine_name/view/form.html"
+			"templateUrl": "app/resource/machine_name/view/form.html"
 		},
 		"16": {
 			"route": "/machine-name/:mode/:id",
-			"templateUrl": "management_app/resource/machine_name/view/form.html"
+			"templateUrl": "app/resource/machine_name/view/form.html"
 		},
 		"17": {
 			"route": "/machine-name-translation/list",
-			"templateUrl": "management_app/resource/machine_name_translation/view/list.html"
+			"templateUrl": "app/resource/machine_name_translation/view/list.html"
 		},
 		"18": {
 			"route": "/machine-name-translation/show/:id",
-			"templateUrl": "management_app/resource/machine_name_translation/view/show.html"
+			"templateUrl": "app/resource/machine_name_translation/view/show.html"
 		},
 		"19": {
 			"route": "/machine-name-translation/:mode",
-			"templateUrl": "management_app/resource/machine_name_translation/view/form.html"
+			"templateUrl": "app/resource/machine_name_translation/view/form.html"
 		},
 		"20": {
 			"route": "/machine-name-translation/:mode/:id",
-			"templateUrl": "management_app/resource/machine_name_translation/view/form.html"
+			"templateUrl": "app/resource/machine_name_translation/view/form.html"
 		},
 		"21": {
 			"route": "/backend-route/list",
-			"templateUrl": "management_app/resource/backend_route/view/list.html"
+			"templateUrl": "app/resource/backend_route/view/list.html"
 		},
 		"22": {
 			"route": "/backend-route/show/:id",
-			"templateUrl": "management_app/resource/backend_route/view/show.html"
+			"templateUrl": "app/resource/backend_route/view/show.html"
 		},
 		"23": {
 			"route": "/backend-route/:mode",
-			"templateUrl": "management_app/resource/backend_route/view/form.html"
+			"templateUrl": "app/resource/backend_route/view/form.html"
 		},
 		"24": {
 			"route": "/backend-route/:mode/:id",
-			"templateUrl": "management_app/resource/backend_route/view/form.html"
+			"templateUrl": "app/resource/backend_route/view/form.html"
 		},
 		"25": {
 			"route": "/site/list",
-			"templateUrl": "management_app/resource/site/view/list.html"
+			"templateUrl": "app/resource/site/view/list.html"
 		},
 		"26": {
 			"route": "/site/show/:id",
-			"templateUrl": "management_app/resource/site/view/show.html"
+			"templateUrl": "app/resource/site/view/show.html"
 		},
 		"27": {
 			"route": "/site/:mode",
-			"templateUrl": "management_app/resource/site/view/form.html"
+			"templateUrl": "app/resource/site/view/form.html"
 		},
 		"28": {
 			"route": "/site/:mode/:id",
-			"templateUrl": "management_app/resource/site/view/form.html"
+			"templateUrl": "app/resource/site/view/form.html"
 		},
 		"29": {
 			"route": "/plan/list",
-			"templateUrl": "management_app/resource/plan/view/list.html"
+			"templateUrl": "app/resource/plan/view/list.html"
 		},
 		"30": {
 			"route": "/plan/show/:id",
-			"templateUrl": "management_app/resource/plan/view/show.html"
+			"templateUrl": "app/resource/plan/view/show.html"
 		},
 		"31": {
 			"route": "/plan/:mode",
-			"templateUrl": "management_app/resource/plan/view/form.html"
+			"templateUrl": "app/resource/plan/view/form.html"
 		},
 		"32": {
 			"route": "/plan/:mode/:id",
-			"templateUrl": "management_app/resource/plan/view/form.html"
+			"templateUrl": "app/resource/plan/view/form.html"
 		},
 		"33": {
 			"route": "/feature/list",
-			"templateUrl": "management_app/resource/feature/view/list.html"
+			"templateUrl": "app/resource/feature/view/list.html"
 		},
 		"34": {
 			"route": "/feature/show/:id",
-			"templateUrl": "management_app/resource/feature/view/show.html"
+			"templateUrl": "app/resource/feature/view/show.html"
 		},
 		"35": {
 			"route": "/feature/:mode",
-			"templateUrl": "management_app/resource/feature/view/form.html"
+			"templateUrl": "app/resource/feature/view/form.html"
 		},
 		"36": {
 			"route": "/feature/:mode/:id",
-			"templateUrl": "management_app/resource/feature/view/form.html"
+			"templateUrl": "app/resource/feature/view/form.html"
 		},
 		"37": {
 			"route": "/resort-facility/list",
-			"templateUrl": "management_app/resource/resort_facility/view/list.html"
+			"templateUrl": "app/resource/resort_facility/view/list.html"
 		},
 		"38": {
 			"route": "/resort-facility/show/:id",
-			"templateUrl": "management_app/resource/resort_facility/view/show.html"
+			"templateUrl": "app/resource/resort_facility/view/show.html"
 		},
 		"39": {
 			"route": "/resort-facility/:mode",
-			"templateUrl": "management_app/resource/resort_facility/view/form.html"
+			"templateUrl": "app/resource/resort_facility/view/form.html"
 		},
 		"40": {
 			"route": "/resort-facility/:mode/:id",
-			"templateUrl": "management_app/resource/resort_facility/view/form.html"
+			"templateUrl": "app/resource/resort_facility/view/form.html"
 		},
 		"41": {
 			"route": "/accommodation-facility/list",
-			"templateUrl": "management_app/resource/accommodation_facility/view/list.html"
+			"templateUrl": "app/resource/accommodation_facility/view/list.html"
 		},
 		"42": {
 			"route": "/accommodation-facility/show/:id",
-			"templateUrl": "management_app/resource/accommodation_facility/view/show.html"
+			"templateUrl": "app/resource/accommodation_facility/view/show.html"
 		},
 		"43": {
 			"route": "/accommodation-facility/:mode",
-			"templateUrl": "management_app/resource/accommodation_facility/view/form.html"
+			"templateUrl": "app/resource/accommodation_facility/view/form.html"
 		},
 		"44": {
 			"route": "/accommodation-facility/:mode/:id",
-			"templateUrl": "management_app/resource/accommodation_facility/view/form.html"
+			"templateUrl": "app/resource/accommodation_facility/view/form.html"
 		},
 		"45": {
 			"route": "/accommodation-kind/list",
-			"templateUrl": "management_app/resource/accommodation_kind/view/list.html"
+			"templateUrl": "app/resource/accommodation_kind/view/list.html"
 		},
 		"46": {
 			"route": "/accommodation-kind/show/:id",
-			"templateUrl": "management_app/resource/accommodation_kind/view/show.html"
+			"templateUrl": "app/resource/accommodation_kind/view/show.html"
 		},
 		"47": {
 			"route": "/accommodation-kind/:mode",
-			"templateUrl": "management_app/resource/accommodation_kind/view/form.html"
+			"templateUrl": "app/resource/accommodation_kind/view/form.html"
 		},
 		"48": {
 			"route": "/accommodation-kind/:mode/:id",
-			"templateUrl": "management_app/resource/accommodation_kind/view/form.html"
+			"templateUrl": "app/resource/accommodation_kind/view/form.html"
 		},
 		"49": {
 			"route": "/accommodation/list",
-			"templateUrl": "management_app/resource/accommodation/view/list.html"
+			"templateUrl": "app/resource/accommodation/view/list.html"
 		},
 		"50": {
 			"route": "/accommodation/show/:id",
-			"templateUrl": "management_app/resource/accommodation/view/show.html"
+			"templateUrl": "app/resource/accommodation/view/show.html"
 		},
 		"51": {
 			"route": "/accommodation/:mode",
-			"templateUrl": "management_app/resource/accommodation/view/form.html"
+			"templateUrl": "app/resource/accommodation/view/form.html"
 		},
 		"52": {
 			"route": "/accommodation/:mode/:id",
-			"templateUrl": "management_app/resource/accommodation/view/form.html"
+			"templateUrl": "app/resource/accommodation/view/form.html"
 		},
 		"53": {
 			"route": "/language/list",
-			"templateUrl": "management_app/resource/language/view/list.html"
+			"templateUrl": "app/resource/language/view/list.html"
 		},
 		"54": {
 			"route": "/language/show/:id",
-			"templateUrl": "management_app/resource/language/view/show.html"
+			"templateUrl": "app/resource/language/view/show.html"
 		},
 		"55": {
 			"route": "/language/:mode",
-			"templateUrl": "management_app/resource/language/view/form.html"
+			"templateUrl": "app/resource/language/view/form.html"
 		},
 		"56": {
 			"route": "/language/:mode/:id",
-			"templateUrl": "management_app/resource/language/view/form.html"
+			"templateUrl": "app/resource/language/view/form.html"
 		},
 		"57": {
 			"route": "/room/list",
-			"templateUrl": "management_app/resource/room/view/list.html"
+			"templateUrl": "app/resource/room/view/list.html"
 		},
 		"58": {
 			"route": "/room/show/:id",
-			"templateUrl": "management_app/resource/room/view/show.html"
+			"templateUrl": "app/resource/room/view/show.html"
 		},
 		"59": {
 			"route": "/room/:mode",
-			"templateUrl": "management_app/resource/room/view/form.html"
+			"templateUrl": "app/resource/room/view/form.html"
 		},
 		"60": {
 			"route": "/room/:mode/:id",
-			"templateUrl": "management_app/resource/room/view/form.html"
+			"templateUrl": "app/resource/room/view/form.html"
 		},
 		"61": {
 			"route": "/page/list",
-			"templateUrl": "management_app/resource/page/view/list.html"
+			"templateUrl": "app/resource/page/view/list.html"
 		},
 		"62": {
 			"route": "/page/show/:id",
-			"templateUrl": "management_app/resource/page/view/show.html"
+			"templateUrl": "app/resource/page/view/show.html"
 		},
 		"63": {
 			"route": "/page/:mode",
-			"templateUrl": "management_app/resource/page/view/form.html"
+			"templateUrl": "app/resource/page/view/form.html"
 		},
 		"64": {
 			"route": "/page/:mode/:id",
-			"templateUrl": "management_app/resource/page/view/form.html"
+			"templateUrl": "app/resource/page/view/form.html"
 		},
 		"65": {
 			"route": "/section/list",
-			"templateUrl": "management_app/resource/section/view/list.html"
+			"templateUrl": "app/resource/section/view/list.html"
 		},
 		"66": {
 			"route": "/section/show/:id",
-			"templateUrl": "management_app/resource/section/view/show.html"
+			"templateUrl": "app/resource/section/view/show.html"
 		},
 		"67": {
 			"route": "/section/:mode",
-			"templateUrl": "management_app/resource/section/view/form.html"
+			"templateUrl": "app/resource/section/view/form.html"
 		},
 		"68": {
 			"route": "/section/:mode/:id",
-			"templateUrl": "management_app/resource/section/view/form.html"
+			"templateUrl": "app/resource/section/view/form.html"
 		},
 		"69": {
 			"route": "/section-kind/list",
-			"templateUrl": "management_app/resource/section_kind/view/list.html"
+			"templateUrl": "app/resource/section_kind/view/list.html"
 		},
 		"70": {
 			"route": "/section-kind/show/:id",
-			"templateUrl": "management_app/resource/section_kind/view/show.html"
+			"templateUrl": "app/resource/section_kind/view/show.html"
 		},
 		"71": {
 			"route": "/section-kind/:mode",
-			"templateUrl": "management_app/resource/section_kind/view/form.html"
+			"templateUrl": "app/resource/section_kind/view/form.html"
 		},
 		"72": {
 			"route": "/section-kind/:mode/:id",
-			"templateUrl": "management_app/resource/section_kind/view/form.html"
+			"templateUrl": "app/resource/section_kind/view/form.html"
 		},
 		"73": {
 			"route": "/accommodation-luxury-title/list",
-			"templateUrl": "management_app/resource/accommodation_luxury_title/view/list.html"
+			"templateUrl": "app/resource/accommodation_luxury_title/view/list.html"
 		},
 		"74": {
 			"route": "/accommodation-luxury-title/show/:id",
-			"templateUrl": "management_app/resource/accommodation_luxury_title/view/show.html"
+			"templateUrl": "app/resource/accommodation_luxury_title/view/show.html"
 		},
 		"75": {
 			"route": "/accommodation-luxury-title/:mode",
-			"templateUrl": "management_app/resource/accommodation_luxury_title/view/form.html"
+			"templateUrl": "app/resource/accommodation_luxury_title/view/form.html"
 		},
 		"76": {
 			"route": "/accommodation-luxury-title/:mode/:id",
-			"templateUrl": "management_app/resource/accommodation_luxury_title/view/form.html"
+			"templateUrl": "app/resource/accommodation_luxury_title/view/form.html"
 		},
 		"77": {
 			"route": "/order/list",
-			"templateUrl": "management_app/resource/order/view/list.html"
+			"templateUrl": "app/resource/order/view/list.html"
 		},
 		"78": {
 			"route": "/order/show/:id",
-			"templateUrl": "management_app/resource/order/view/show.html"
+			"templateUrl": "app/resource/order/view/show.html"
 		},
 		"79": {
 			"route": "/order/:mode",
-			"templateUrl": "management_app/resource/order/view/form.html"
+			"templateUrl": "app/resource/order/view/form.html"
 		},
 		"80": {
 			"route": "/order/:mode/:id",
-			"templateUrl": "management_app/resource/order/view/form.html"
+			"templateUrl": "app/resource/order/view/form.html"
 		},
 		"81": {
 			"route": "/accommodation-order/list",
-			"templateUrl": "management_app/resource/accommodation__order/view/list.html"
+			"templateUrl": "app/resource/accommodation__order/view/list.html"
 		},
 		"82": {
 			"route": "/accommodation-order/show/:id",
-			"templateUrl": "management_app/resource/accommodation__order/view/show.html"
+			"templateUrl": "app/resource/accommodation__order/view/show.html"
 		},
 		"83": {
 			"route": "/accommodation-order/:mode",
-			"templateUrl": "management_app/resource/accommodation__order/view/form.html"
+			"templateUrl": "app/resource/accommodation__order/view/form.html"
 		},
 		"84": {
 			"route": "/accommodation-order/:mode/:id",
-			"templateUrl": "management_app/resource/accommodation__order/view/form.html"
+			"templateUrl": "app/resource/accommodation__order/view/form.html"
 		},
 		"85": {
 			"route": "/payment/list",
-			"templateUrl": "management_app/resource/payment/view/list.html"
+			"templateUrl": "app/resource/payment/view/list.html"
 		},
 		"86": {
 			"route": "/payment/show/:id",
-			"templateUrl": "management_app/resource/payment/view/show.html"
+			"templateUrl": "app/resource/payment/view/show.html"
 		},
 		"87": {
 			"route": "/payment/:mode",
-			"templateUrl": "management_app/resource/payment/view/form.html"
+			"templateUrl": "app/resource/payment/view/form.html"
 		},
 		"88": {
 			"route": "/payment/:mode/:id",
-			"templateUrl": "management_app/resource/payment/view/form.html"
+			"templateUrl": "app/resource/payment/view/form.html"
 		}
 	}
 }
